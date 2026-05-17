@@ -33,43 +33,43 @@ export default function CartUi({ isOpen, toggleCart }) {
           <div className="flex flex-col gap-3">
             {cartItems.map((item) => (
               <div
-                key={item.id}
+                key={item?.id}
                 className="flex items-center gap-3 border-b border-gray-700 pb-3"
               >
-                {/* Image */}
                 <div className="w-16 h-16 bg-white rounded p-1 shrink-0">
                   <img
-                    src={item.image}
-                    alt={item.title}
+                    src={item?.image}
+                    alt={item?.title}
+                    loading="lazy"
                     className="w-full h-full object-contain"
                   />
                 </div>
 
                 <div className="flex-1 flex flex-col gap-1">
-                  <h3 className="text-sm line-clamp-2">{item.title}</h3>
+                  <h3 className="text-sm line-clamp-2">{item?.title}</h3>
                   <p className="text-sm text-brand font-semibold">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    ${(item?.price * item?.quantity).toFixed(2)}
                   </p>
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <button
                         className="cursor-pointer border py-0.5 px-2 rounded hover:bg-gray-700 transition-colors"
-                        onClick={() => decrement(item.id)}
+                        onClick={() => decrement(item?.id)}
                       >
                         −
                       </button>
-                      <span className="w-5 text-center">{item.quantity}</span>
+                      <span className="w-5 text-center">{item?.quantity}</span>
                       <button
                         className="cursor-pointer border py-0.5 px-2 rounded hover:bg-gray-700 transition-colors"
-                        onClick={() => increment(item.id)}
+                        onClick={() => increment(item?.id)}
                       >
                         +
                       </button>
                     </div>
 
                     <button
-                      onClick={() => removeFromCart(item.id)}
+                      onClick={() => removeFromCart(item?.id)}
                       className="text-red-500 hover:text-red-400 transition-colors cursor-pointer"
                       aria-label="Remove item"
                     >
