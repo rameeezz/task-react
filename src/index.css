@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #e05a40;
+  --color-border-color: #e2ddd5;
+  --color-text-color: #8a857f;
+}
+
+body {
+  @apply transition-colors duration-500;
+}
