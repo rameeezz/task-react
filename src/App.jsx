@@ -6,7 +6,8 @@ import SideNav from "./component/UI/SideNav";
 import ProductCard from "./component/product/ProductCard";
 import { useTheme } from "./context/ThemeContext";
 import CartUi from "./component/cart/CartUi";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const { dark } = useTheme();
   const BASE_URL = import.meta.env.VITE_API_URL;
@@ -41,6 +42,7 @@ function App() {
     <>
       <CartUi isOpen={cartOpen} toggleCart={toggleCart} />
       <Navbar toggleCart={toggleCart} />
+      <ToastContainer />
       <div
         className={`min-h-screen grid grid-cols-12 transition-colors duration-500 ${dark ? "bg-black text-white" : "bg-white text-black"}`}
       >

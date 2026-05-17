@@ -1,5 +1,5 @@
 import { useCart } from "../../context/CartContext";
-
+import { toast } from "react-toastify";
 
 export default function ProductCard({ itemDetails }) {
   const { addToCart } = useCart();
@@ -33,7 +33,7 @@ export default function ProductCard({ itemDetails }) {
             <button
               className="flex justify-center items-center gap-1 text-white bg-brand p-2 w-20 rounded-2xl cursor-pointer hover:opacity-90 transition-all text-sm font-semibold"
               onClick={() => {
-                addToCart(itemDetails);
+                (addToCart(itemDetails), toast.success("Item added to cart!"));
               }}
             >
               + Add
